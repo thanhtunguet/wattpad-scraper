@@ -11,8 +11,7 @@
     "build": "NODE_ENV=production  webpack",
     "serve": "nodemon .",
     "live": "node .",
-    "start": "run-p watch serve",
-    "start:prod": "run-s live"
+    "start": "run-p watch serve"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -20,6 +19,7 @@
     "codemirror": "^5.59.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
     "lodash": "^4.17.20",
     "rxjs": "^6.6.3",
     "socket.io": "^3.1.0",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/express": "^4.17.11",
+    "@types/express-http-proxy": "^1.6.1",
     "@types/node": "^14.14.21",
     "@types/socket.io": "^2.1.12",
     "@typescript-eslint/eslint-plugin": "^4.13.0",

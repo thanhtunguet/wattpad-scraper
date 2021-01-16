@@ -2,9 +2,10 @@ import express, {Application, Request, Response} from 'express';
 import {createServer, Server} from 'http';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import {Socket} from 'socket.io';
-import {PORT} from 'src/config/dotenv';
+import {PORT, WEB_PROXY_URL} from 'src/config/dotenv';
 import {scrapePage} from 'src/helpers/wattpad';
 import {SocketEvent} from 'src/socket-event';
+import proxy from 'express-http-proxy';
 
 const io = require('socket.io');
 
@@ -44,9 +45,13 @@ socket.on(SocketEvent.CONNECTION, (client: Socket) => {
   });
 });
 
-app.use((req: Request, res: Response) => {
-  res.status(200).header('Content-Type', 'text/plain').send('OK');
-});
+if (WEB_PROXY_URL) {
+  app.use('/', proxy(WEB_PROXY_URL));
+} else {
+  app.use((req: Request, res: Response) => {
+    res.status(200).header('Content-Type', 'text/plain').send('OK');
+  });
+}
 
 server.listen(PORT, () => {
   // eslint-disable-next-line no-console

@@ -13,4 +13,4 @@ ADD package.json .
 RUN yarn install --production
 COPY --from=build /usr/src/app/dist/ ./dist/
 
-CMD ["yarn", "start:prod"]
+CMD ["yarn", "live"]
