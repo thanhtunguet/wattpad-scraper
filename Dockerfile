@@ -11,6 +11,6 @@ EXPOSE 3000
 ENV PORT 3000
 ADD package.json .
 RUN yarn install --production
-COPY --from=build ./dist/ ./dist/
+COPY --from=build /usr/src/app/dist/ ./dist/
 
 CMD ["yarn", "start:prod"]
