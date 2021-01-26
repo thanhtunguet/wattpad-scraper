@@ -1,9 +1,9 @@
-export enum SocketEvent {
-  LOG = 'log',
+export enum ScraperEvent {
+  SCRAPE = 'SCRAPE',
+  LOG = 'LOG',
   CONNECT = 'connect',
   CONNECTION = 'connection',
   DISCONNECT = 'disconnect',
-  SCRAPE = 'scrape',
   SCRAPING_NEW_CONTENT = 'scraping_new_content',
   SCRAPING_FINISHED = 'scraping_finished',
 }

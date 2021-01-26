@@ -1,7 +1,1 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-export const PORT: number = Number(process.env.PORT);
-
-export const WEB_PROXY_URL: string = process.env.WEB_PROXY_URL;
+export const NODE_ENV: string = process.env.NODE_ENV || 'production';

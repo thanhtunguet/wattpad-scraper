@@ -1,5 +1,8 @@
-dist/
-node_modules/
-.idea/
+/.idea
+/.vs
+/build
+/dist
+/node_modules
+/react-devtools
 .env
 .DS_Store
